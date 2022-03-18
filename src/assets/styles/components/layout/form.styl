@@ -1,0 +1,110 @@
+.form
+  &__person
+    margin-bottom vw(35)
+
+    .form__label + .form__label
+      margin-top vw(10)
+
+  &__label
+    display flex
+    flex-direction column
+    width 100%
+    height vw(56)
+    border 1px solid #F1F1F1
+    padding vw(7) vw(15)
+    border-radius vw(4)
+
+    &--short
+      width vw(260)
+
+    &-name
+      color rgba(17, 17, 17, 0.48)
+      font-size vw(13)
+      line-height vw(16)
+      margin-bottom vw(5)
+
+    &__input
+      width 100%
+      font-size vw(14)
+      line-height vw(24)
+
+  &__children
+    &-header
+      display flex
+      justify-content space-between
+      align-items center
+
+    .title
+      margin-bottom 0
+
+  &__add
+    pos relative
+    display flex
+    align-items center
+    justify-content space-between
+    padding vw(10) vw(20)
+    border vw(2) solid $blue
+    border-radius vw(100)
+    transition opacity .3s
+
+    &.hide
+      pointer-events none
+      opacity 0
+
+    &::before
+      content ''
+      pos absolute
+      top: vw(-2);
+      right: vw(-2);
+      bottom: vw(-2);
+      left: vw(-2);
+      border-radius vw(100)
+      opacity 0
+      background-color $blue
+      pointer-events none
+      transition opacity .3s
+
+    &:hover
+      &::before
+        opacity 1
+
+      .form__add-img path
+        fill #fff
+
+      .form__add-text
+        c #fff
+
+
+    &-img
+      pos relative
+      width vw(18)
+      height vw(18)
+      margin-right vw(8)
+
+      path
+        fill $blue
+        transition fill .3s
+
+    &-text
+      pos relative
+      color $blue
+      transition .3s
+
+  &__child
+    display flex
+    justify-content space-between
+    align-items center
+    margin-top vw(11)
+
+    &-del
+      c $blue
+
+  &__btn
+    margin-top vw(30)
+    padding 0 vw(20)
+    line-height vw(44)
+    background-color $blue
+    border-radius vw(100)
+    c #fff
+
+
